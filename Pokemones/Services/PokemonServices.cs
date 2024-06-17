@@ -31,7 +31,5 @@ namespace Pokemones.Services
             string json = await _httpClient.GetStringAsync(url);
             PokemonInfo caracteristicas = JsonConvert.DeserializeObject<PokemonInfo>(json);
             return caracteristicas;
-
-
         }
     }}
