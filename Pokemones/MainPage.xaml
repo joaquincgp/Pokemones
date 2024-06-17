@@ -7,12 +7,24 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <ListView x:Name="ListaPokemones">
+            <ListView x:Name="ListaPokemones" ItemsSource="{Binding listado_pokemones}" ItemSelected="MostrarInfoPokemon">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label>{Binding name}</Label>
-                            <Label>{Binding url}</Label>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                            
+                                <Label Grid.Column="1"  Text="{Binding name}"
+                                       FontAttributes="Bold"></Label>
+                                <Label Grid.Column="1"  Grid.Row="1" Text="{Binding url}" FontAttributes="Italic" VerticalOptions="End"></Label>
+                            
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

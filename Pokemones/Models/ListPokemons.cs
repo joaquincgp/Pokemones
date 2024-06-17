@@ -9,7 +9,10 @@ namespace Pokemones.Models
     public class ListPokemons
     {
 
-        public int count {  get; set; }
+        public int count { get; set; }
+        public string next { get; set; }
+
+        public string previuos { get; set; }
         public List<PokemonItem> results { get; set; }
     }
 }
